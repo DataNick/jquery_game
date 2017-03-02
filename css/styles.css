@@ -28,15 +28,41 @@ li {
   font-size: 3em;
 }
 
-.headers > .screen {
-/*  padding-top: 90px;
-  padding-bottom: 90px;*/
-  color: white;
+.headers > .cat-screen{
+  background: navy;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 16%;
   height: 100px;
+  color: white;
+  border: solid black 2px;
+  border-radius: 10px;
   font-weight: 800;
   font-size: 1em;
 }
 
+#popup {
+  display: none;
+  height: 25%;
+  width: 50%;
+  background-color: yellow;
+  position: absolute;
+  bottom: 55%;
+  left: 23%;
+}
+
+#dialog {
+  background-color: white;
+  height: 100%;
+  width: 100px;
+  display: none;
+  position: absolute;
+  padding: 20px;
+}
+
+.ui-button {
+  background-color: black;
+  width: 100px;
 
 
-
+}
