@@ -8,10 +8,10 @@ function init(eject) {
     // TODO: ensure non-repeating categories
   }
 
-  function storeCategory(category) {
+  function storeCategory(category, selected) {
 
-    if (candidates.length < 5) {
-      candidates.push(category);
+    if (candidates.length < 7) {
+      candidates.push([category.name, selected]);
       // console.log(candidates.length, candidates);
       getQuestions()
     } else {
@@ -20,19 +20,14 @@ function init(eject) {
   }
 
   function normalizeCategory(category){
-    console.log(category);
-    // var q = [];
-    // while(q.length < 5) {
-    //   var random = Math.floor(Math.random() * (category.questions_count));
-    //   q.includes(random)? null : q.push(random);
-    // }
+    // console.log(category);
     var selected = [];
     while(selected.length < 5){
       var random = Math.floor(Math.random() * (category.questions_count));
-      selected.includes(category.questions[random])? null : selected.push(category.questions[random]);
+      selected.includes(category.questions[random]) ? false : selected.push(category.questions[random]);
     }
-    console.log(selected)
-    storeCategory(category);
+    // console.log(selected, category)
+    storeCategory(category, selected);
   }
 
   function validateQuestionsLength(questions){
@@ -50,9 +45,18 @@ function init(eject) {
 
 function returnQuestions(data) {
   return data;
+  // console.log(data)
 };
 
 
 init(function (stuff) {
-
+  // for (var i = 0; i < stuff.length; i++){
+  //   $('#header' + i).html(stuff[i].name.toUpperCase());
+  //   for (var j = 1; j < stuff[i].questions.length; j++){
+  //     $('#row' + j).data({'question': stuff[i].questions[j]})
+  //     // $('#row' + count).data({'question': questions[i], 'answer': answers[num]})
+  //     // console.log(stuff[j])
+  //   }
+  // }
+  console.log(stuff[0])
 })
